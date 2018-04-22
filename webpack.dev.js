@@ -8,6 +8,7 @@ module.exports = merge(common, {
   devServer: {
     contentBase: path.join(__dirname, 'public'),
     historyApiFallback: true,
-    host: '192.168.1.101'
+    host: '192.168.1.101',
+    publicPath: '/dist/'
   }
 });
