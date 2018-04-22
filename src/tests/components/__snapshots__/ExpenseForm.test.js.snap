@@ -6,7 +6,6 @@ exports[`should render ExpenseForm correctly 1`] = `
     onSubmit={[Function]}
   >
     <input
-      autoFocus={true}
       onChange={[Function]}
       placeholder="Description"
       type="text"
@@ -123,7 +122,6 @@ exports[`should render ExpenseForm with expense data 1`] = `
     onSubmit={[Function]}
   >
     <input
-      autoFocus={true}
       onChange={[Function]}
       placeholder="Description"
       type="text"
@@ -240,7 +238,6 @@ exports[`should render error for invalid form submission 1`] = `
     onSubmit={[Function]}
   >
     <input
-      autoFocus={true}
       onChange={[Function]}
       placeholder="Description"
       type="text"
@@ -360,7 +357,6 @@ exports[`should render error for invalid form submission 2`] = `
     onSubmit={[Function]}
   >
     <input
-      autoFocus={true}
       onChange={[Function]}
       placeholder="Description"
       type="text"

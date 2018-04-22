@@ -4,6 +4,7 @@ exports[`should rennder NotFoundPage correctly 1`] = `
 <div>
   404! - 
   <Link
+    href={true}
     replace={false}
     to="/"
   >
