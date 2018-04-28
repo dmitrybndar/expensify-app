@@ -14,8 +14,10 @@ export default class ExpenseForm extends React.Component {
       createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
       calendarFocused: false,
       error: false,
+      btnText: props.expense ? 'Edit expense' : 'Add expense',
     };
   }
+
   onDescriptionChange = (e) => {
     const description = e.target.value;
     this.setState(() => ({ description }));
@@ -62,17 +64,19 @@ export default class ExpenseForm extends React.Component {
 
   render() {
     return (
-      <div>
-        {this.state.error && <p>Please provide description and amount</p>}
-        <form onSubmit={this.onSubmit}>
+      <form className="form" onSubmit={this.onSubmit}>
+        {this.state.error && <p className="form__error">Please provide description and amount</p>}
+        <input
+          type="text"
+          className="text-input"
+          placeholder="Description"
+          value={this.state.description}
+          onChange={this.onDescriptionChange}
+        />
+        <div className="form__row">
           <input
             type="text"
-            placeholder="Description"
-            value={this.state.description}
-            onChange={this.onDescriptionChange}
-          />
-          <input
-            type="text"
+            className="text-input"
             placeholder="Amount"
             value={this.state.amount}
             onChange={this.onAmountChange}
@@ -85,14 +89,17 @@ export default class ExpenseForm extends React.Component {
             numberOfMonths={1}
             isOutsideRange={() => false}
           />
-          <textarea
-            value={this.state.note}
-            onChange={this.onNoteChange}
-            placeholder="Add a note for your expense (optional)"
-          />
-          <button>Add Expense</button>
-        </form>
-      </div>
+        </div>
+        <textarea
+          className="textarea"
+          value={this.state.note}
+          onChange={this.onNoteChange}
+          placeholder="Add a note for your expense (optional)"
+        />
+        <div>
+          <button className="btn">{this.state.btnText}</button>
+        </div>
+      </form>
     );
   }
 }

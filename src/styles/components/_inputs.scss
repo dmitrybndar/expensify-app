@@ -1,0 +1,33 @@
+.text-input {
+  border: 1px solid #cacccd;
+  height: 52px;
+  padding: $s-size;
+  font-size: $font-size-large;
+  font-weight: 300;
+
+  &:focus {
+    border-bottom: 2px solid #008489;
+    outline: none;
+  }
+}
+
+.select {
+  @extend .text-input;
+}
+
+.SingleDatePickerInput {
+  border: 1px solid #cacccd;
+  display: block;
+
+  .DateInput {
+    display: block;
+    width: auto;
+  }
+}
+
+
+
+.textarea {
+  @extend .text-input;
+  height: 10rem;
+}
